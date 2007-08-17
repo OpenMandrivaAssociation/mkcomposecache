@@ -40,6 +40,6 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %{_sbindir}/mkcomposecache
-%{_mandir}/man8/mkcomposecache.8.bz2
+%{_mandir}/man8/mkcomposecache.*
 
 
