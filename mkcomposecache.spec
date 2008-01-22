@@ -1,6 +1,6 @@
 Name: mkcomposecache
 Version: 1.2
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: mkcomposecache is used for creating global (system-wide) Compose cache files
 Group: System/X11
 URL: http://xorg.freedesktop.org
@@ -9,7 +9,7 @@ License: MIT
 Packager: Gustavo Pichorim Boiko <boiko@mandriva.com> 
 BuildRoot: %{_tmppath}/%{name}-root
 
-BuildRequires: x11-util-macros >= 1.0.1
+BuildRequires: x11-util-macros >= 1.1.5
 BuildRequires: libx11-devel
 
 %description
