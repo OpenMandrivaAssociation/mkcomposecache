@@ -1,7 +1,7 @@
 Name: mkcomposecache
 Version: 1.2
 Release: %mkrel 3
-Summary: mkcomposecache is used for creating global (system-wide) Compose cache files
+Summary: Used for creating global (system-wide) Compose cache files
 Group: System/X11
 URL: http://xorg.freedesktop.org
 Source: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
