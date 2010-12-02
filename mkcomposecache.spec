@@ -1,12 +1,11 @@
 Name: mkcomposecache
 Version: 1.2.1
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Used for creating global (system-wide) Compose cache files
 Group: System/X11
 URL: http://xorg.freedesktop.org
 Source: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 License: MIT
-Packager: Gustavo Pichorim Boiko <boiko@mandriva.com> 
 BuildRoot: %{_tmppath}/%{name}-root
 
 BuildRequires: x11-util-macros >= 1.0.1
@@ -41,5 +40,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_sbindir}/mkcomposecache
 %{_mandir}/man8/mkcomposecache.*
-
 
