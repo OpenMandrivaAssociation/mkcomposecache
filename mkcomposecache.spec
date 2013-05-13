@@ -9,7 +9,7 @@ License: MIT
 BuildRoot: %{_tmppath}/%{name}-root
 
 BuildRequires: x11-util-macros >= 1.0.1
-BuildRequires: libx11-devel
+BuildRequires: pkgconfig(x11)
 
 %description
 mkcomposecache is used for creating global (system-wide) Compose cache files.
