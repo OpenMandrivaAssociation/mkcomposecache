@@ -13,6 +13,7 @@ BuildRequires:	pkgconfig(xorg-macros)
 # For generating the caches
 BuildRequires:	x11-server-xvfb
 BuildRequires:	xbiff
+BuildRequires:	libx11-common
 
 %description
 mkcomposecache is used for creating global (system-wide) Compose cache files.
