@@ -44,7 +44,7 @@ BuildArch:	noarch
 
 # Generate compose caches
 mkdir -p %{buildroot}%{_localstatedir}/cache/libx11/compose
-./mkallcomposecaches.sh prefix=%{_prefix} cachedir=%{buildroot}%{_localstatedir}/cache/libx11/compose xvfbopts="'-fp '\''%{_datadir}/fonts/misc'\'" /
+./mkallcomposecaches.sh prefix=%{_prefix} mkcomposecache=%{buildroot}%{_sbindir}/mkcomposecache cachedir=%{buildroot}%{_localstatedir}/cache/libx11/compose xvfbopts="'-fp '\''%{_datadir}/fonts/misc'\'" /
 
 %files
 %{_sbindir}/mkcomposecache
