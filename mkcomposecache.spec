@@ -1,7 +1,7 @@
 Summary:	Used for creating global (system-wide) Compose cache files
 Name:		mkcomposecache
 Version:	1.2.1
-Release:	11
+Release:	12
 Group:		System/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
