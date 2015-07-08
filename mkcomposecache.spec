@@ -34,7 +34,7 @@ BuildArch:	noarch
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--x-includes=%{_includedir} \
 	--x-libraries=%{_libdir}
 %make
