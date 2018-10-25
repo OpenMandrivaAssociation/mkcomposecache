@@ -1,7 +1,7 @@
 Summary:	Used for creating global (system-wide) Compose cache files
 Name:		mkcomposecache
 Version:	1.2.1
-Release:	17
+Release:	18
 Group:		System/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -30,17 +30,20 @@ Summary:	Binary cache files for libX11 Compose files
 Group:		System/X11
 BuildArch:	noarch
 
+%description -n x11-compose-cache
+mkcomposecache is used for creating X11 global (system-wide) Compose cache files.
+
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure \
 	--x-includes=%{_includedir} \
 	--x-libraries=%{_libdir}
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # Generate compose caches
 mkdir -p %{buildroot}%{_localstatedir}/cache/libx11/compose
