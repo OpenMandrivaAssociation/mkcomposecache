@@ -50,7 +50,11 @@ mkcomposecache is used for creating X11 global (system-wide) Compose cache files
 
 # Generate compose caches
 mkdir -p %{buildroot}%{_localstatedir}/cache/libx11/compose
+%if %{cross_compiling}
+./mkallcomposecaches.sh prefix=%{_prefix} mkcomposecache=%{_sbindir}/mkcomposecache cachedir=%{buildroot}%{_localstatedir}/cache/libx11/compose xvfbopts="'-fp '\''%{_datadir}/fonts/misc'\'" /
+%else
 ./mkallcomposecaches.sh prefix=%{_prefix} mkcomposecache=%{buildroot}%{_sbindir}/mkcomposecache cachedir=%{buildroot}%{_localstatedir}/cache/libx11/compose xvfbopts="'-fp '\''%{_datadir}/fonts/misc'\'" /
+%endif
 
 %files
 %{_sbindir}/mkcomposecache
