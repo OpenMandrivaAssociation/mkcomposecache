@@ -55,6 +55,13 @@ mkcomposecache is used for creating X11 global (system-wide) Compose cache files
 
 # Generate compose caches
 mkdir -p %{buildroot}%{_localstatedir}/cache/libx11/compose
+# xbiff is backgrounded on the script's stdout and never killed. When
+# rpmbuild's stdout is a pipe, that writer stays open and the build
+# hangs after the packages are written. Point it at /dev/null and reap it.
+sed -i \
+	-e 's|\$xbiff 2>&1 &|$xbiff >/dev/null 2>\&1 \& xbiff_pid=\$!|' \
+	-e '/^echo "Success\."$/a kill "$xbiff_pid" >/dev/null 2>&1 || true' \
+	mkallcomposecaches.sh
 %if %{cross_compiling}
 ./mkallcomposecaches.sh prefix=%{_prefix} mkcomposecache=%{_sbindir}/mkcomposecache cachedir=%{buildroot}%{_localstatedir}/cache/libx11/compose xvfbopts="'-fp '\''%{_datadir}/fonts/misc'\'" /
 %else
